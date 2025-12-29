@@ -1,0 +1,62 @@
+# IndexTTS API Server Configuration
+
+# Server Settings
+server:
+  host: "0.0.0.0"
+  port: 8049
+  workers: 1
+  timeout: 600  # Request timeout in seconds
+  
+# Model Settings
+model:
+  model_dir: "./checkpoints"
+  config_path: "./checkpoints/config.yaml"
+  use_fp16: true
+  use_deepspeed: false
+  use_cuda_kernel: false
+  device: "auto"  # auto, cuda:0, cpu, etc.
+
+# Concurrency Control
+concurrency:
+  max_concurrent_short: 3   # For text <= 100 characters
+  max_concurrent_medium: 2  # For text 101-300 characters
+  max_concurrent_long: 1    # For text > 300 characters
+  
+# Cache Settings
+cache:
+  enable_prompt_cache: true
+  max_cached_prompts: 50
+  preload_all_prompts: true  # Preload all indexed prompts on startup
+
+# Audio Settings
+audio:
+  default_sample_rate: 24000
+  output_format: "wav"  # wav, mp3
+  
+# Generation Defaults
+generation:
+  # Default parameters for TTS generation
+  do_sample: true
+  temperature: 0.8
+  top_p: 0.8
+  top_k: 30
+  num_beams: 3
+  repetition_penalty: 10.0
+  length_penalty: 0.0
+  max_mel_tokens: 1500
+  max_text_tokens_per_segment: 120
+  
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_file: "./logs/api_server.log"
+  log_requests: true
+  log_generation_time: true
+
+# CORS
+cors:
+  enabled: true
+  allow_origins: ["*"]
+  allow_methods: ["*"]
+  allow_headers: ["*"]
+

@@ -343,23 +343,69 @@ with gr.Blocks(title="IndexTTS Demo") as demo:
         )
 
     def on_example_click(example):
-        print(f"Example clicked: ({len(example)} values) = {example!r}")
-        return (
-            gr.update(value=example[0]),
-            gr.update(value=example[1]),
-            gr.update(value=example[2]),
-            gr.update(value=example[3]),
-            gr.update(value=example[4]),
-            gr.update(value=example[5]),
-            gr.update(value=example[6]),
-            gr.update(value=example[7]),
-            gr.update(value=example[8]),
-            gr.update(value=example[9]),
-            gr.update(value=example[10]),
-            gr.update(value=example[11]),
-            gr.update(value=example[12]),
-            gr.update(value=example[13]),
+        print("=" * 80)
+        print(f"[DEBUG] Example clicked: Received {len(example)} values")
+        print(f"[DEBUG] Example data: {example!r}")
+        print(f"[DEBUG] Current working directory: {current_dir}")
+        print(f"[DEBUG] Original prompt_audio_path (example[0]): {example[0]}")
+        print(f"[DEBUG] Original emo_audio_path (example[3]): {example[3]}")
+        
+        # For Gradio Audio component with type="filepath", use absolute paths
+        # Gradio needs absolute paths to properly serve files
+        prompt_audio_path = example[0] if example[0] else None
+        if prompt_audio_path:
+            # Convert to absolute path if relative
+            if not os.path.isabs(prompt_audio_path):
+                prompt_audio_path = os.path.join(current_dir, prompt_audio_path)
+                print(f"[DEBUG] Converted relative path to: {prompt_audio_path}")
+            # Normalize the path
+            prompt_audio_path = os.path.abspath(prompt_audio_path)
+            print(f"[DEBUG] Final absolute prompt_audio_path: {prompt_audio_path}")
+            # Verify file exists
+            if not os.path.exists(prompt_audio_path):
+                print(f"[ERROR] Audio file not found: {prompt_audio_path}")
+                prompt_audio_path = None
+            else:
+                file_size = os.path.getsize(prompt_audio_path)
+                print(f"[SUCCESS] Audio file found: {prompt_audio_path} (size: {file_size} bytes)")
+        else:
+            print("[DEBUG] prompt_audio_path is None")
+        
+        emo_audio_path = example[3] if example[3] else None
+        if emo_audio_path:
+            if not os.path.isabs(emo_audio_path):
+                emo_audio_path = os.path.join(current_dir, emo_audio_path)
+                print(f"[DEBUG] Converted relative emo path to: {emo_audio_path}")
+            emo_audio_path = os.path.abspath(emo_audio_path)
+            print(f"[DEBUG] Final absolute emo_audio_path: {emo_audio_path}")
+            if not os.path.exists(emo_audio_path):
+                print(f"[ERROR] Emotion audio file not found: {emo_audio_path}")
+                emo_audio_path = None
+            else:
+                file_size = os.path.getsize(emo_audio_path)
+                print(f"[SUCCESS] Emotion audio file found: {emo_audio_path} (size: {file_size} bytes)")
+        else:
+            print("[DEBUG] emo_audio_path is None")
+        
+        result = (
+            prompt_audio_path,  # Return path directly, not wrapped in gr.update()
+            example[1],
+            example[2],
+            emo_audio_path,
+            example[4],
+            example[5],
+            example[6],
+            example[7],
+            example[8],
+            example[9],
+            example[10],
+            example[11],
+            example[12],
+            example[13],
         )
+        print(f"[DEBUG] Returning values - prompt_audio: {result[0]}, emo_audio: {result[3]}")
+        print("=" * 80)
+        return result
 
     # click() event works on both desktop and mobile UI
     example_table.click(on_example_click,
@@ -554,4 +600,7 @@ with gr.Blocks(title="IndexTTS Demo") as demo:
 
 if __name__ == "__main__":
     demo.queue(20)
-    demo.launch(server_name=cmd_args.host, server_port=cmd_args.port)
+    # Add examples directory to static files so Gradio can serve audio files
+    examples_dir = os.path.join(current_dir, "examples")
+    demo.launch(server_name=cmd_args.host, server_port=cmd_args.port, 
+                allowed_paths=[os.path.abspath(examples_dir)])

@@ -1,0 +1,213 @@
+{
+  "prompts": {
+    "zh_female_gossip": {
+      "path": "examples/中文女声（八卦博主）.mp3",
+      "description": "活泼八卦风格女声，适合娱乐、八卦类内容",
+      "language": "zh",
+      "gender": "female",
+      "style": "gossip"
+    },
+    "zh_female_morning": {
+      "path": "examples/中文女声（晨间主播）.mp3",
+      "description": "温和亲切的早间主播风格，适合新闻播报",
+      "language": "zh",
+      "gender": "female",
+      "style": "morning"
+    },
+    "zh_female_intellectual": {
+      "path": "examples/中文女声（知性）.mp3",
+      "description": "专业稳重知性风格，适合知识性内容",
+      "language": "zh",
+      "gender": "female",
+      "style": "intellectual"
+    },
+    "zh_female_investigative": {
+      "path": "examples/中文女声（调查记者）.mp3",
+      "description": "严肃质询的调查记者风格，适合深度报道",
+      "language": "zh",
+      "gender": "female",
+      "style": "investigative"
+    },
+    "zh_male_sports": {
+      "path": "examples/中文男声（体育解说）.mp3",
+      "description": "激情快节奏的体育解说风格",
+      "language": "zh",
+      "gender": "male",
+      "style": "sports"
+    },
+    "zh_male_tech": {
+      "path": "examples/中文男声（科技UP主）.mp3",
+      "description": "年轻活力的科技UP主风格",
+      "language": "zh",
+      "gender": "male",
+      "style": "tech"
+    },
+    "zh_male_breaking_news": {
+      "path": "examples/中文男声（突发新闻专家）.mp3",
+      "description": "紧急严肃的突发新闻风格",
+      "language": "zh",
+      "gender": "male",
+      "style": "breaking_news"
+    },
+    "zh_male_talk_show": {
+      "path": "examples/中文男声（轻松脱口秀）.mp3",
+      "description": "幽默轻松的脱口秀风格",
+      "language": "zh",
+      "gender": "male",
+      "style": "talk_show"
+    },
+    "en_female_gossip": {
+      "path": "examples/英文女声（八卦博主）.mp3",
+      "description": "Lively gossip style female voice for entertainment content",
+      "language": "en",
+      "gender": "female",
+      "style": "gossip"
+    },
+    "en_female_morning": {
+      "path": "examples/英文女声（早间主播）.mp3",
+      "description": "Warm morning news anchor style",
+      "language": "en",
+      "gender": "female",
+      "style": "morning"
+    },
+    "en_female_intellectual": {
+      "path": "examples/英文女声（知性解说）.mp3",
+      "description": "Professional intellectual commentary style",
+      "language": "en",
+      "gender": "female",
+      "style": "intellectual"
+    },
+    "en_female_investigative": {
+      "path": "examples/英文女声（调查记者）.mp3",
+      "description": "Serious investigative journalist style",
+      "language": "en",
+      "gender": "female",
+      "style": "investigative"
+    },
+    "en_male_sports": {
+      "path": "examples/英文男声（体育解说）.mp3",
+      "description": "Energetic sports commentary style",
+      "language": "en",
+      "gender": "male",
+      "style": "sports"
+    },
+    "en_male_tech": {
+      "path": "examples/英文男声（科技极客）.mp3",
+      "description": "Tech geek enthusiast style",
+      "language": "en",
+      "gender": "male",
+      "style": "tech"
+    },
+    "en_male_breaking_news": {
+      "path": "examples/英文男声（突发新闻专家）.mp3",
+      "description": "Urgent breaking news reporter style",
+      "language": "en",
+      "gender": "male",
+      "style": "breaking_news"
+    },
+    "en_male_talk_show": {
+      "path": "examples/英文男声（轻松脱口秀）.mp3",
+      "description": "Casual talk show host style",
+      "language": "en",
+      "gender": "male",
+      "style": "talk_show"
+    },
+    "voice_01": {
+      "path": "examples/voice_01.wav",
+      "description": "原有音色参考 01",
+      "language": "mixed",
+      "gender": "unknown",
+      "style": "default"
+    },
+    "voice_02": {
+      "path": "examples/voice_02.wav",
+      "description": "原有音色参考 02",
+      "language": "mixed",
+      "gender": "unknown",
+      "style": "default"
+    },
+    "voice_03": {
+      "path": "examples/voice_03.wav",
+      "description": "原有音色参考 03",
+      "language": "mixed",
+      "gender": "unknown",
+      "style": "default"
+    },
+    "voice_04": {
+      "path": "examples/voice_04.wav",
+      "description": "原有音色参考 04",
+      "language": "mixed",
+      "gender": "unknown",
+      "style": "default"
+    },
+    "voice_05": {
+      "path": "examples/voice_05.wav",
+      "description": "原有音色参考 05",
+      "language": "mixed",
+      "gender": "unknown",
+      "style": "default"
+    },
+    "voice_06": {
+      "path": "examples/voice_06.wav",
+      "description": "原有音色参考 06",
+      "language": "mixed",
+      "gender": "unknown",
+      "style": "default"
+    },
+    "voice_07": {
+      "path": "examples/voice_07.wav",
+      "description": "原有音色参考 07",
+      "language": "mixed",
+      "gender": "unknown",
+      "style": "default"
+    },
+    "voice_08": {
+      "path": "examples/voice_08.wav",
+      "description": "原有音色参考 08",
+      "language": "mixed",
+      "gender": "unknown",
+      "style": "default"
+    },
+    "voice_09": {
+      "path": "examples/voice_09.wav",
+      "description": "原有音色参考 09",
+      "language": "mixed",
+      "gender": "unknown",
+      "style": "default"
+    },
+    "voice_10": {
+      "path": "examples/voice_10.wav",
+      "description": "原有音色参考 10",
+      "language": "mixed",
+      "gender": "unknown",
+      "style": "default"
+    },
+    "voice_11": {
+      "path": "examples/voice_11.wav",
+      "description": "原有音色参考 11",
+      "language": "mixed",
+      "gender": "unknown",
+      "style": "default"
+    },
+    "voice_12": {
+      "path": "examples/voice_12.wav",
+      "description": "原有音色参考 12",
+      "language": "mixed",
+      "gender": "unknown",
+      "style": "default"
+    }
+  },
+  "emotions": {
+    "emo_sad": {
+      "path": "examples/emo_sad.wav",
+      "description": "悲伤情感参考",
+      "emotion_type": "sad"
+    },
+    "emo_hate": {
+      "path": "examples/emo_hate.wav",
+      "description": "厌恶情感参考",
+      "emotion_type": "hate"
+    }
+  }
+}
+
